@@ -21,5 +21,6 @@ Route::get('/', 'App\Http\Controllers\HomeController@index');
 /*
  * ProductController
  */
-Route::get('/category/{id}', 'App\Http\Controllers\ProductController@show');
+Route::get('/{category}', 'App\Http\Controllers\ProductController@showCategory')->name('ShowCategory');
+Route::get('/category/{product_id}', 'App\Http\Controllers\ProductController@show')->name('ShowProduct');
 
