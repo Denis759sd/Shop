@@ -1,5 +1,3 @@
-DirectoryIndex resources/views/home/index.blade.php
-
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes
@@ -19,5 +17,5 @@ DirectoryIndex resources/views/home/index.blade.php
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ resources/views/home/index.blade.php [L]
+    RewriteRule ^ index.php [L]
 </IfModule>
