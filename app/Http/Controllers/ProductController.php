@@ -17,7 +17,7 @@ class ProductController extends Controller
     public function showCategory(Request $request, $category) {
         $category = Category::where('alias', $category)->first();
 
-        $paginate = 2;
+        $paginate = 16;
         $products = Product::where('category_id', $category->id)->paginate($paginate);
 
         if (isset($request->orderBy)) {
