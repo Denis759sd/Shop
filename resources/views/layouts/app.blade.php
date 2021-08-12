@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="/styles/responsive.css">
     <!-- CSRF Token -->
-    <meta name="csfr-token" content="{{csrf_token()}}">
+    <meta name="csrf-token" content="{{csrf_token()}}">
     @yield('custom_css')
 </head>
 <body>
@@ -29,15 +29,15 @@
                 <div class="row">
                     <div class="col">
                         <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                            <div class="logo"><a href="/">Oltine.</a></div>
+                            <div class="logo"><a href="{{route('Home')}}">Oltine.</a></div>
                             <nav class="main_nav">
                                 <ul>
                                     <li class="hassubs active">
-                                        <a href="/">Home</a>
+                                        <a href="{{route('Home')}}">Home</a>
                                         <ul>
                                             <li><a href="/">Categories</a></li>
                                             <li><a href="product.html">Product</a></li>
-                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="{{route('CartIndex')}}">Cart</a></li>
                                             <li><a href="checkout.html">Check out</a></li>
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
@@ -57,7 +57,7 @@
                             </nav>
                             <div class="header_extra ml-auto">
                                 <div class="shopping_cart">
-                                    <a href="cart.html">
+                                    <a href="{{route('CartIndex')}}">
                                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                              viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
 											<g>
@@ -68,7 +68,7 @@
 													c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z"/>
                                             </g>
 										</svg>
-                                        <div>Cart <span>(0)</span></div>
+                                        <div>Cart <span class="cart-qty">{{\Cart::session($_COOKIE['cart_id'])->getTotalQuantity()}}</span></div>
                                     </a>
                                 </div>
                                 <div class="search">
@@ -143,7 +143,7 @@
                         <ul class="page_menu_selection menu_mm">
                             <li class="page_menu_item menu_mm"><a href="categories.html">Categories<i class="fa fa-angle-down"></i></a></li>
                             <li class="page_menu_item menu_mm"><a href="product.html">Product<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item menu_mm"><a href="cart.html">Cart<i class="fa fa-angle-down"></i></a></li>
+                            <li class="page_menu_item menu_mm"><a href="{{route('CartIndex')}}">Cart<i class="fa fa-angle-down"></i></a></li>
                             <li class="page_menu_item menu_mm"><a href="checkout.html">Checkout<i class="fa fa-angle-down"></i></a></li>
                             <li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
                         </ul>

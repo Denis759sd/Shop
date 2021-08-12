@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function show($id) {
+    public function show($category, $id) {
         $product = Product::find($id);
 
         return view('product.show', ['product' => $product]);

@@ -16,11 +16,17 @@ use Illuminate\Support\Facades\Route;
 /*
  * HomeController
  */
-Route::get('/', 'App\Http\Controllers\HomeController@index');
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name('Home');
 
 /*
  * ProductController
  */
-Route::get('/{category}', 'App\Http\Controllers\ProductController@showCategory')->name('ShowCategory');
-Route::get('/category/{product_id}', 'App\Http\Controllers\ProductController@show')->name('ShowProduct');
+Route::get('/category/{category}', 'App\Http\Controllers\ProductController@showCategory')->name('ShowCategory');
+Route::get('/category/{category}/{product_id}', 'App\Http\Controllers\ProductController@show')->name('ShowProduct');
 
+/*
+ * CartController
+*/
+Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('CartIndex');
+Route::post('/add-to-cart', 'App\Http\Controllers\CartController@addToCart')->name('AddToCart');
+Route::get('/clear-cart', 'App\Http\Controllers\CartController@clear')->name('ClearCart');
