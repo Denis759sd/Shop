@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
  * HomeController
  */
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('Home');
+Route::get('/search', 'App\Http\Controllers\HomeController@search')->name('search');
 
 /*
  * ProductController
@@ -26,7 +27,8 @@ Route::get('/category/{category}/{product_id}', 'App\Http\Controllers\ProductCon
 
 /*
  * CartController
-*/
+ */
 Route::get('/cart', 'App\Http\Controllers\CartController@index')->name('CartIndex');
 Route::post('/add-to-cart', 'App\Http\Controllers\CartController@addToCart')->name('AddToCart');
 Route::get('/clear-cart', 'App\Http\Controllers\CartController@clear')->name('ClearCart');
+
