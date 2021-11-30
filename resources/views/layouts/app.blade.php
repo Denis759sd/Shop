@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Sublime project">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="https://img.icons8.com/ios/50/000000/bag-diagonal-view.png" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/styles/bootstrap4/bootstrap.min.css">
     <link href="/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -29,17 +30,17 @@
                 <div class="row">
                     <div class="col">
                         <div class="header_content d-flex flex-row align-items-center justify-content-start">
-                            <div class="logo"><a href="{{route('Home')}}">TypeBrend.</a></div>
+                            <div class="logo"><a href="{{route('home')}}">TypeBrend.</a></div>
                             <nav class="main_nav">
                                 <ul>
                                     <li class="hassubs active">
-                                        <a href="{{route('Home')}}">Home</a>
+                                        <a href="{{route('home')}}">Home</a>
                                         <ul>
                                             <li><a href="/">Categories</a></li>
                                             <li><a href="product.html">Product</a></li>
                                             <li><a href="{{route('CartIndex')}}">Cart</a></li>
                                             <li><a href="checkout.html">Check out</a></li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                            <li><a href="{{route('contact')}}">Contact</a></li>
                                         </ul>
                                     </li>
                                     <li class="hassubs">
@@ -50,9 +51,7 @@
                                             @endforeach
                                         </ul>
                                     </li>
-                                    <li><a href="#">Accessories</a></li>
-                                    <li><a href="#">Offers</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="{{route('contact')}}">Contact</a></li>
                                 </ul>
                             </nav>
                             <div class="header_extra ml-auto">
@@ -136,13 +135,11 @@
                 </div>
                 <ul class="page_menu_nav menu_mm">
                     <li class="page_menu_item has-children menu_mm">
-                        <a href="index.html">Home<i class="fa fa-angle-down"></i></a>
+                        <a href="{{route('home')}}">Home<i class="fa fa-angle-down"></i></a>
                         <ul class="page_menu_selection menu_mm">
                             <li class="page_menu_item menu_mm"><a href="categories.html">Categories<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item menu_mm"><a href="product.html">Product<i class="fa fa-angle-down"></i></a></li>
                             <li class="page_menu_item menu_mm"><a href="{{route('CartIndex')}}">Cart<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item menu_mm"><a href="checkout.html">Checkout<i class="fa fa-angle-down"></i></a></li>
-                            <li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
+                            <li class="page_menu_item menu_mm"><a href="{{route('contact')}}">Contact<i class="fa fa-angle-down"></i></a></li>
                         </ul>
                     </li>
                     <li class="page_menu_item has-children menu_mm">
@@ -155,7 +152,7 @@
                     </li>
                     <li class="page_menu_item menu_mm"><a href="index.html">Accessories<i class="fa fa-angle-down"></i></a></li>
                     <li class="page_menu_item menu_mm"><a href="#">Offers<i class="fa fa-angle-down"></i></a></li>
-                    <li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
+                    <li class="page_menu_item menu_mm"><a href="{{route('contact')}}">Contact<i class="fa fa-angle-down"></i></a></li>
                 </ul>
             </div>
         </div>
